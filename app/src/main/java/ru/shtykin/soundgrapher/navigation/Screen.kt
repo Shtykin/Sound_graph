@@ -5,7 +5,7 @@ sealed class Screen(
 ) {
     object Splash: Screen(ROUTE_SPLASH)
     object Settings: Screen(ROUTE_SETTINGS)
-    object Graph: Screen(ROUTE_SETTINGS)
+    object Graph: Screen(ROUTE_GRAPH)
 
     private companion object {
         const val ROUTE_SPLASH = "splash"

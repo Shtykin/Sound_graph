@@ -1,6 +1,7 @@
 package ru.shtykin.soundgrapher.presentation
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -17,6 +18,8 @@ import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ru.shtykin.soundgrapher.navigation.AppNavGraph
 import ru.shtykin.soundgrapher.navigation.Screen
+import ru.shtykin.soundgrapher.presentation.screen.graph.GraphScreen
+import ru.shtykin.soundgrapher.presentation.screen.settings.SettingsScreen
 import ru.shtykin.soundgrapher.presentation.screen.splash.SplashScreen
 import ru.shtykin.soundgrapher.presentation.ui.theme.SoundGrapherTheme
 
@@ -39,14 +42,30 @@ class MainActivity : ComponentActivity() {
                     startScreenRoute = startScreenRoute,
                     navHostController = navHostController,
                     splashScreenContent = {
+                        Log.e("DEBUG", "splash")
                         SplashScreen(
-                            uiState = uiState
+                            uiState = uiState,
+                            finishLoading = {
+                                navHostController.navigate(Screen.Settings.route)
+                                viewModel.openSettingsScreen()
+                            }
                         )
                     },
                     settingsScreenContent = {
-
+                        Log.e("DEBUG", "settings")
+                        SettingsScreen(
+                            uiState = uiState,
+                            onGraphClick = {
+                                navHostController.navigate(Screen.Graph.route)
+                                viewModel.openGraphScreen()
+                            }
+                        )
                     },
                     graphScreenContent = {
+                        Log.e("DEBUG", "settings")
+                        GraphScreen(
+                            uiState = uiState
+                        )
 
                     }
                 )
