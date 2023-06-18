@@ -1,4 +1,4 @@
-package ru.shtykin.soundgrapher.ui.theme
+package ru.shtykin.soundgrapher.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

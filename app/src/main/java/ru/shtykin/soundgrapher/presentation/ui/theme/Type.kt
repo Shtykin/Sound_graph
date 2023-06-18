@@ -1,4 +1,4 @@
-package ru.shtykin.soundgrapher.ui.theme
+package ru.shtykin.soundgrapher.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
