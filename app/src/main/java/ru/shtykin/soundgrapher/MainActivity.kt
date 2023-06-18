@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import ru.shtykin.soundgrapher.ui.theme.SoundGrapherTheme
+import ru.shtykin.soundgrapher.presentation.ui.theme.SoundGrapherTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
